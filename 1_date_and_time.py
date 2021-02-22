@@ -1,3 +1,5 @@
+import datetime
+from datetime import datetime as dt
 """
 Домашнее задание №2
 
@@ -8,12 +10,17 @@
 
 """
 
+
 def print_days():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    today = datetime.date.today()
+    print((today - datetime.timedelta(days = 1)).strftime('%Y.%m.%d'))
+    print(today.strftime('%Y.%m.%d'))
+    print((today - datetime.timedelta(days = 30)).strftime('%Y.%m.%d'))
+
 
 
 def str_2_datetime(date_string):
@@ -21,7 +28,8 @@ def str_2_datetime(date_string):
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+    date = dt.strptime(date_string,'%d/%m/%y %H:%M:%S.%f')
+    return date
 
 if __name__ == "__main__":
     print_days()
